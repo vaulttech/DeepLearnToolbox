@@ -1,6 +1,6 @@
-function [er, bad] = cnntest(net, x, y)
+function [er, bad] = cnntest(net, x, y, opts)
     %  feedforward
-    net = cnnff(net, x);
+    net = cnnff(net, x, opts);
     [~, h] = max(net.o);
     [~, a] = max(y);
     bad = find(h ~= a);
